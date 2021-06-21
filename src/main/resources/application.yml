@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5432/spring_rest
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL82Dialect
+    show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
